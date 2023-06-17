@@ -4,7 +4,7 @@
  * @GithubUser: SnowWarri0r
  * @Date: 2023-06-17 11:51:11
  * @Company: ncuhome
- * @LastEditTime: 2023-06-17 14:56:20
+ * @LastEditTime: 2023-06-17 15:09:58
  * @FilePath: \notelog_fe\src\components\BanList\index.tsx
  * @Description:
  */
@@ -88,7 +88,7 @@ const App: React.FC = () => {
       dataIndex: "",
       key: "x",
       fixed: "right",
-      width: "200",
+      width: "100",
       render: (_, record) => {
         const handleClick = (record: UserProps) => {
           unban(record.username)

@@ -4,7 +4,7 @@
  * @GithubUser: SnowWarri0r
  * @Date: 2023-06-16 21:42:38
  * @Company: ncuhome
- * @LastEditTime: 2023-06-16 22:18:41
+ * @LastEditTime: 2023-06-17 15:12:48
  * @FilePath: \notelog_fe\src\components\CityPicker\index.tsx
  * @Description:
  */
@@ -27,7 +27,7 @@ const App: React.FC<Props> = ({ value, setValue }) => {
     setValue(v);
     console.log(value);
   }
-  return <Cascader options={options} defaultValue={value} onChange={handleChange} />;
+  return <Cascader options={options} defaultValue={value} onChange={handleChange as any} />;
 };
 
 export default App;
