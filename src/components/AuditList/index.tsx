@@ -13,6 +13,7 @@ import { Button, Space, Table } from "antd";
 import type { ColumnsType, TablePaginationConfig } from "antd/es/table";
 import { approve, deleteUser, getAuditList } from "@/utils";
 import Toast from "../Toast";
+import dayjs from "dayjs";
 
 interface TableParams {
   pagination?: TablePaginationConfig;
@@ -69,8 +70,8 @@ const App: React.FC = () => {
       title: "上次登陆时间",
       dataIndex: "lastLoginTimestamp",
       render: (v) => {
-        const date = new Date(v * 1000);
-        const formatDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDay()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+        const date = dayjs.unix(v);
+        const formatDate = date.format("YYYY-MM-DD HH:mm:ss");
         return formatDate;
       },
     },

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function signUp(data: RegisterInputs) {
   try {
-    const res = await axios.post("/api/user/register", {
+    const res = await axios.put("/api/user/register", {
       username: data.username,
       name: data.name,
       password: data.password,

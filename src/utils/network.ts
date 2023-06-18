@@ -13,7 +13,7 @@ import axios, {
   AxiosRequestHeaders,
   AxiosResponse,
 } from "axios";
-axios.defaults.baseURL = "http://localhost:8081";
+axios.defaults.baseURL = "http://42.192.229.234:8081";
 axios.defaults.timeout = 7500;
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
