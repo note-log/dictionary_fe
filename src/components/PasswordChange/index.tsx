@@ -12,15 +12,18 @@ import React from "react";
 import { Button, Form, Input } from "antd";
 import { changePassword } from "@/utils";
 import Toast from "../Toast";
+import { useNavigate } from "react-router-dom";
 
 const App: React.FC = () => {
   const [form] = Form.useForm();
+  const navigate = useNavigate();
   const handleSubmit = () => {
     form.validateFields().then((v) => {
       changePassword(v.oldPassword, v.newPassword)
         .then(() => {
           localStorage.removeItem("token");
           Toast.success("更改成功");
+          navigate("/login");
         })
         .catch((e) => {
           Toast.error(e.data.detail);

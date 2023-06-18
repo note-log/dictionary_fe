@@ -169,7 +169,6 @@ export default function Home() {
           <Col style={{width: 100}}>
             <Menu
               items={headerMenu}
-              defaultOpenKeys={["user"]}
               mode="horizontal"
               theme="dark"
               onClick={handleHeaderMenuClick}
