@@ -199,8 +199,8 @@ const ClazzForm: React.FC<ClazzFormProps> = ({
       >
         <Form.Item
           name="name"
-          label="专业名"
-          rules={[{ required: true, message: "请输入专业名" }]}
+          label="班级名"
+          rules={[{ required: true, message: "请输入班级名" }]}
         >
           <Input />
         </Form.Item>
