@@ -15,7 +15,6 @@ import {
   addMajor,
   deleteMajor,
   getAdminMajorList,
-  getAuditList,
   updateMajor,
 } from "@/utils";
 import Toast from "../Toast";

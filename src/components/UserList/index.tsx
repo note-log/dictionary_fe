@@ -164,6 +164,7 @@ const App: React.FC = () => {
     setTableParams({
       pagination,
     });
+    setRefresh(true);
     if (pagination.pageSize !== tableParams.pagination?.pageSize) {
       setData([]);
     }
