@@ -155,14 +155,18 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ open, setOpen, values }) => {
         <Form.Item
           name="phone"
           label="手机号码"
-          rules={[{ required: true, message: "电话号码不得为空！" }]}
+          rules={[
+            { required: true, message: "电话号码不得为空！" },
+            { pattern: /^(?:\+?86)?1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[235-8]\d{2}|4(?:0\d|1[0-2]|9\d))|9[0-35-9]\d{2}|66\d{2})\d{6}$/, message: "请输入正确的手机号码！" }
+          ]}
         >
           <Input />
         </Form.Item>
         <Form.Item
           name="email"
           label="电子邮箱"
-          rules={[{ required: true, message: "电子邮箱不得为空！" }]}
+          rules={[{ required: true, message: "电子邮箱不得为空！" },
+          { type: "email", message: "请输入正确的电子邮箱" }]}
         >
           <Input />
         </Form.Item>
@@ -172,10 +176,10 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ open, setOpen, values }) => {
         <Form.Item name="clazz" label="班级">
           <Select options={clazzs} />
         </Form.Item>
-        <Form.Item name="enrollmentYear" label="入学年份">
+        <Form.Item name="enrollmentYear" label="入学年份" rules={[{ required: true, message: "入学年份不得为空" }]}>
           <DatePicker picker="year" />
         </Form.Item>
-        <Form.Item name="graduateYear" label="毕业年份">
+        <Form.Item name="graduateYear" label="毕业年份" rules={[{ required: true, message: "毕业年份不得为空" }]}>
           <DatePicker picker="year" />
         </Form.Item>
         <Form.Item name="company" label="就职单位">
