@@ -70,8 +70,8 @@ export default function SignUp() {
                 <TextField
                   {...register("username", {
                     required: "学号不得为空",
-                    minLength: { value: 6, message: "too short" },
-                    maxLength: { value: 20, message: "too long" },
+                    minLength: { value: 4, message: "学号过短" },
+                    maxLength: { value: 20, message: "学号过长" },
                   })}
                   helperText={errors.username ? errors.username.message : ""}
                   error={Boolean(errors.username)}
@@ -87,8 +87,8 @@ export default function SignUp() {
                 <TextField
                   {...register("name", {
                     required: "姓名不得为空",
-                    minLength: { value: 2, message: "too short" },
-                    maxLength: { value: 10, message: "too long" },
+                    minLength: { value: 2, message: "姓名过短" },
+                    maxLength: { value: 10, message: "姓名过长" },
                   })}
                   helperText={errors.username ? errors.username.message : ""}
                   error={Boolean(errors.username)}
@@ -104,11 +104,11 @@ export default function SignUp() {
                 <TextField
                   {...register("email", {
                     required: "邮箱不得为空",
-                    maxLength: { value: 30, message: "too long" },
+                    maxLength: { value: 30, message: "邮箱过长" },
                     pattern: {
                       value:
                         /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,
-                      message: "wrong email format",
+                      message: "错误的邮箱格式",
                     },
                   })}
                   helperText={errors.email ? errors.email.message : ""}
