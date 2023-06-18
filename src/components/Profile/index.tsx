@@ -128,8 +128,8 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ open, setOpen, values }) => {
                     });
                 }
               })
-              .catch(() => {
-                Toast.error("更新失败");
+              .catch((err) => {
+                Toast.error(err.data.detail);
               });
 
             form.resetFields();
