@@ -58,7 +58,7 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            注册
           </Typography>
           <Box
             component="form"
