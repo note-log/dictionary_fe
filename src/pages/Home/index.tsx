@@ -166,43 +166,47 @@ export default function Home() {
         </Col>
         <div style={{ flex: 1 }}></div>
         {auth && (
-          <Menu
-            items={headerMenu}
-            mode="horizontal"
-            theme="dark"
-            onClick={handleHeaderMenuClick}
-          />
-        )}
-      </Header>
-      <Layout style={{ flex: 1 }}>
-        <Sider width={200} style={{ background: colorBgContainer }}>
-          <Menu
-            mode="inline"
-            selectedKeys={[current]}
-            style={{ height: "100%", borderRight: 0 }}
-            items={menuItems}
-            onClick={handleSidebarClick}
-          />
-        </Sider>
-        <Layout style={{ padding: "0 24px 24px" }}>
-          <Content
-            style={{
-              padding: 24,
-              background: colorBgContainer,
-            }}
-          >
-            {current === "profile" && <Profile props={profile!} />}
-            {current === "change_password" && <PasswordChange />}
-            {current === "dictionary_search" && <ProfileSearch />}
-            {current === "dictionary_list" && <ProfileList />}
-            {current === "audit" && <AuditList />}
-            {current === "major" && <MajorList />}
-            {current === "clazz" && <ClazzList />}
-            {current === "userList" && <UserList />}
-            {current === "ban" && <BanList />}
-          </Content>
-        </Layout>
-      </Layout>
+          <Col style={{width: 100}}>
+            <Menu
+              items={headerMenu}
+              defaultOpenKeys={["user"]}
+              mode="horizontal"
+              theme="dark"
+              onClick={handleHeaderMenuClick}
+            />
+          </Col>
+        )
+}
+      </Header >
+  <Layout style={{ flex: 1 }}>
+    <Sider width={200} style={{ background: colorBgContainer }}>
+      <Menu
+        mode="inline"
+        selectedKeys={[current]}
+        style={{ height: "100%", borderRight: 0 }}
+        items={menuItems}
+        onClick={handleSidebarClick}
+      />
+    </Sider>
+    <Layout style={{ padding: "0 24px 24px" }}>
+      <Content
+        style={{
+          padding: 24,
+          background: colorBgContainer,
+        }}
+      >
+        {current === "profile" && <Profile props={profile!} />}
+        {current === "change_password" && <PasswordChange />}
+        {current === "dictionary_search" && <ProfileSearch />}
+        {current === "dictionary_list" && <ProfileList />}
+        {current === "audit" && <AuditList />}
+        {current === "major" && <MajorList />}
+        {current === "clazz" && <ClazzList />}
+        {current === "userList" && <UserList />}
+        {current === "ban" && <BanList />}
+      </Content>
     </Layout>
+  </Layout>
+    </Layout >
   );
 }
