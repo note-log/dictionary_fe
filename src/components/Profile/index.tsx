@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import Toast from "../Toast";
 import CityPicker from "../CityPicker";
 import { useAuth } from "@/store";
+import dayjs from "dayjs";
 interface Props {
   props: ProfileProps;
 }
@@ -143,7 +144,11 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ open, setOpen, values }) => {
         form={form}
         layout="vertical"
         name="profileForm"
-        initialValues={values}
+        initialValues={{
+          ...values,
+          enrollmentYear: values.enrollmentYear === null ? null : dayjs(values.enrollmentYear, "YYYY"),
+          graduateYear: values.graduateYear === null ? null : dayjs(values.graduateYear, "YYYY")
+        }}
       >
         <Form.Item
           name="name"
